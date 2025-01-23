@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.MainWindowController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="View">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Itemdefs" />
+                  <MenuItem mnemonicParsing="false" text="NpcDefs" />
+                  <MenuItem mnemonicParsing="false" text="ObjDefs" />
+                  <MenuItem mnemonicParsing="false" text="Models" />
+               </items>
+            </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <HBox prefHeight="574.0" prefWidth="900.0">
+         <children>
+            <VBox fillWidth="false" prefHeight="574.0" prefWidth="282.0">
+               <children>
+                  <ToolBar prefHeight="53.0" prefWidth="278.0" VBox.vgrow="ALWAYS">
+                     <items>
+                        <TextField fx:id="searchList" prefHeight="25.0" prefWidth="113.0" promptText="Search." />
+                        <Button fx:id="newItem" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="New" />
+                        <Button fx:id="deleteItem" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Delete" />
+                     </items>
+                  </ToolBar>
+                  <ListView fx:id="listview" prefHeight="506.0" prefWidth="278.0" />
+               </children>
+            </VBox>
+            <TabPane prefHeight="574.0" prefWidth="618.0" tabMinHeight="28.0">
+              <tabs>
+                <Tab fx:id="itemTab" text="Item">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="549.0" prefWidth="618.0">
+                           <children>
+                              <Button fx:id="saveItemDef" layoutX="451.0" layoutY="495.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Save" />
+                              <Button fx:id="reloadItemDef" layoutX="529.0" layoutY="495.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Reload" />
+                              <TextField fx:id="itemName" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="124.0" />
+                              <Label layoutX="14.0" layoutY="14.0" text="Name:" />
+                              <TextField fx:id="itemInvenModel" layoutX="260.0" layoutY="32.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="259.0" layoutY="14.0" text="Inventory Model:" />
+                              <TextField fx:id="itemValue" layoutX="14.0" layoutY="78.0" prefHeight="25.0" prefWidth="124.0" />
+                              <Label layoutX="14.0" layoutY="61.0" text="Value:" />
+                              <Label layoutX="14.0" layoutY="115.0" text="Stack IDs:" />
+                              <TextField fx:id="itemStackIds" layoutX="14.0" layoutY="132.0" prefHeight="25.0" prefWidth="216.0" />
+                              <Label layoutX="14.0" layoutY="165.0" text="Stack Amounts:" />
+                              <TextField fx:id="itemStackAmounts" layoutX="14.0" layoutY="182.0" prefHeight="25.0" prefWidth="216.0" />
+                              <Label layoutX="409.0" layoutY="14.0" text="Male Equip (1):" textFill="#0813dd" />
+                              <TextField fx:id="itemMaleEquip1" layoutX="409.0" layoutY="32.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="409.0" layoutY="62.0" text="Female Equip (1):" textFill="#e57373" />
+                              <TextField fx:id="itemFemaleEquip1" layoutX="409.0" layoutY="79.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="409.0" layoutY="108.0" text="Male Equip (2):" textFill="#0813dd" />
+                              <TextField fx:id="itemMaleEquip2" layoutX="409.0" layoutY="132.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="409.0" layoutY="165.0" text="Female Equip (2):" textFill="#e57373" />
+                              <TextField fx:id="itemFemaleEquip2" layoutX="409.0" layoutY="182.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="409.0" layoutY="271.0" text="Female Equip (3):" textFill="#e57373" />
+                              <Label layoutX="409.0" layoutY="216.0" text="Male Equip (3):" textFill="#0813dd" />
+                              <TextField fx:id="itemMaleEquip3" layoutX="409.0" layoutY="237.0" prefHeight="25.0" prefWidth="113.0" />
+                              <TextField fx:id="itemFemaleEquip3" layoutX="409.0" layoutY="293.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="260.0" layoutY="61.0" text="Inventory Zoom:" />
+                              <TextField fx:id="itemInvenZoom" layoutX="260.0" layoutY="79.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="258.0" layoutY="115.0" text="Model Rotation (1):" />
+                              <TextField fx:id="itemModelRot1" layoutX="260.0" layoutY="132.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="258.0" layoutY="165.0" text="Model Rotation (2):" />
+                              <TextField fx:id="itemModelRot2" layoutX="260.0" layoutY="182.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="262.0" layoutY="216.0" text="Model Offset (Xcoord):" />
+                              <TextField fx:id="itemModelOSX" layoutX="260.0" layoutY="237.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="262.0" layoutY="271.0" text="Model Offset (Ycoord):" />
+                              <TextField fx:id="itemModelOSY" layoutX="260.0" layoutY="293.0" prefHeight="25.0" prefWidth="113.0" />
+                              <Label layoutX="17.0" layoutY="216.0" text="Inventory Options:" />
+                              <TextField fx:id="itemInvenOptions" layoutX="14.0" layoutY="237.0" prefHeight="25.0" prefWidth="216.0" />
+                              <Label layoutX="17.0" layoutY="271.0" text="Ground Options:" />
+                              <TextField fx:id="itemGroundOptions" layoutX="14.0" layoutY="288.0" prefHeight="25.0" prefWidth="216.0" />
+                              <CheckBox fx:id="isMembersItem" layoutX="15.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Members">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="isUnnoted" layoutX="15.0" layoutY="363.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Unnoted">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox fx:id="isStackable" layoutX="15.0" layoutY="388.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Stackable">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </CheckBox>
+                              <Button fx:id="addModel" layoutX="529.0" layoutY="31.0" mnemonicParsing="false" text="Add Model" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Untitled Tab">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </HBox>
+  </children>
+</VBox>
