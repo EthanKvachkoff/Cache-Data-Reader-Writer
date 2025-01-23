@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ItemDefReader",
+            "request": "launch",
+            "mainClass": "fetchers.ItemDefReader",
+            "projectName": "Cache_a6f2c0df"
+        },
+        {
+            "type": "java",
+            "name": "ModelsFetcher",
+            "request": "launch",
+            "mainClass": "fetchers.ModelsFetcher",
+            "projectName": "Cache_a6f2c0df"
+        },
+        {
+            "type": "java",
+            "name": "MainWindow",
+            "request": "launch",
+            "mainClass": "javafx.MainWindow",
+            "projectName": "Cache_a6f2c0df",
+            "vmArgs": "--module-path \"C:/Users/ethan/OneDrive/Desktop/javafx-sdk-23.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+  }
